@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="app.animations.css" />
+</head>
+
+<body>
+
+  <layout-header username="username"></layout-header>
+  <div class="view-container">
+      <div ui-view class="view-frame"></div>
+  </div>
+  <layout-footer></layout-footer>
+
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular/angular-animate.min.js"></script>
+  <script src="lib/angular/angular-resource.min.js"></script>
+  <script src="lib/angular/angular-ui-router.min.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+  <script src="app.animations.js"></script>
+  <script src="core/core.module.js"></script>
+  <script src="core/checkmark/checkmark.filter.js"></script>
+  <script src="core/logo/logo.module.js"></script>
+  <script src="core/logo/logo.service.js"></script>
+
+  <script src="layout/layout.module.js"></script>
+  <script src="layout/layout-header/layout-header.module.js"></script>
+  <script src="layout/layout-header/layout-header.component.js"></script>
+  <script src="layout/layout-body/layout-body.module.js"></script>
+  <script src="layout/layout-body/layout-body.component.js"></script>
+  <script src="layout/layout-footer/layout-footer.module.js"></script>
+  <script src="layout/layout-footer/layout-footer.component.js"></script>
+
+  <script src="login/login.module.js"></script>
+  <script src="login/login-form/login-form.module.js"></script>
+  <script src="login/login-form/login-form.component.js"></script>
+  <script src="login/registration-form/registration-form.module.js"></script>
+  <script src="login/registration-form/registration-form.component.js"></script>
+
+  <script src="phone/phone.module.js"></script>
+  <script src="phone/phone.config.js"></script>
+  <script src="phone/phone.service.js"></script>
+  <script src="phone/phone.component.js"></script>
+  <script src="phone/phone-list/phone-list.module.js"></script>
+  <script src="phone/phone-list/phone-list.component.js"></script>
+  <script src="phone/phone-detail/phone-detail.module.js"></script>
+  <script src="phone/phone-detail/phone-detail.component.js"></script>
+
+</body>
+
+</html>
