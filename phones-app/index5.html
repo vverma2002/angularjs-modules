@@ -1,0 +1,207 @@
+<!-- https://www.digitalocean.com/community/tutorials/angular-routing-using-ui-router -->
+<!-- https://www.bogotobogo.com/AngularJS/AngularJS_ui-route-vs-ngRoute-multiple-views-nested-views.php -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Sans-serif;
+            word-spacing: -2px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            color: #191919;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h2 {
+            font-weight: normal;
+            font-size: 20px;
+            color: #888;
+            padding: 5px 0;
+        }
+
+        .message {
+            background: #181818;
+            color: #FFF;
+            position: absolute;
+            top: -250px;
+            left: 0;
+            width: 100%;
+            height: 250px;
+            padding: 20px;
+            transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+            overflow: hidden;
+            box-sizing: border-box;
+
+        }
+
+        .message h1 {
+            color: #FFF;
+        }
+
+        #toggle {
+            position: absolute;
+            appearance: none;
+            cursor: pointer;
+            left: -100%;
+            top: -100%;
+        }
+
+        #toggle+label {
+            position: absolute;
+            cursor: pointer;
+            padding: 10px;
+            background: #26ae90;
+            width: 100px;
+            border-radius: 3px;
+            padding: 8px 10px;
+            color: #FFF;
+            line-height: 20px;
+            font-size: 12px;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+            cursor: pointer;
+            margin: 20px 50px;
+            transition: all 500ms ease;
+        }
+
+        #toggle+label:after {
+            content: "Open"
+        }
+
+        .container {
+            transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+            padding: 5em 3em;
+        }
+
+        #toggle:checked~.message {
+            top: 0;
+        }
+
+        #toggle:checked~.container {
+            margin-top: 250px;
+        }
+
+        #toggle:checked+label {
+            background: #dd6149;
+        }
+
+        #toggle:checked+label:after {
+            content: "Close"
+        }
+    </style>
+
+    <style type="text/css">
+        .mydiv {
+            width: 300px;
+            height: 200px;
+            background-color: gray;
+        }
+
+        .targetLeftright {
+            -moz-transition: -moz-transform .5s;
+            -o-transition: -o-transform .5s;
+            -webkit-transition: -webkit-transform .5s;
+            -moz-transform-origin: left;
+            -ms-transform-origin: left;
+            -o-transform-origin: left;
+            -webkit-transform-origin: left;
+            transform-origin: left;
+            transition: transform .5s;
+        }
+
+        .leftright {
+
+            -moz-transform: scaleY(0);
+            -ms-transform: scaleY(0);
+            -o-transform: scaleY(0);
+            -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+
+        }
+
+        .targetUpdown {
+            -moz-transition: -moz-transform .5s;
+            -o-transition: -o-transform .5s;
+            -webkit-transition: -webkit-transform .5s;
+            -moz-transform-origin: top;
+            -ms-transform-origin: top;
+            -o-transform-origin: top;
+            -webkit-transform-origin: top;
+            transform-origin: top;
+            transition: transform .5s;
+        }
+
+        .updown {
+            -moz-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+            -o-transform: scaleX(0);
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+    </style>
+
+</head>
+
+<!-- apply our angular app to our site -->
+
+<body>
+
+
+
+    <input type="checkbox" name="toggle" id="toggle" />
+    <label for="toggle"></label>
+
+
+
+    <div class="container">
+
+
+        <h1>Pure CSS3 Slide Down Toggle Demo</h1>
+        <h2> Click the Open button to see hidden mesage.</h2>
+
+    </div>
+
+
+
+    <div class="message">
+        <h1> hello, I'm a hidden message. You found it.</h1>
+        <h2>Now Click the Heart button in the bottom to support CSS3</h2>
+
+
+
+    </div>
+
+
+    <div>
+        <div id="mybox1" class="mydiv targetLeftright">
+        </div>
+        <div id="mybox2" class="mydiv targetUpdown">
+        </div>
+        <input type="button" value="left-right" id="mybtn1" />
+        <input type="button" value="updown" id="mybtn2" />
+    </div>
+
+</body>
+
+<script type="text/javascript">
+
+    $('#mybtn1').click(function () {
+        $("#mybox1").toggleClass("updown");
+    });
+    $('#mybtn2').click(function () {
+        $("#mybox2").toggleClass("leftright");
+    });
+
+
+</script>
+
+</html>
